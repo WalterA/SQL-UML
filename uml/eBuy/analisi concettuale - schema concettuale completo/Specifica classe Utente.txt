@@ -1,0 +1,15 @@
+Specifica classe Utente
+
+
+affidabilita(): Reale in 0..1
+	pre: 
+		Sia F l'insieme degli oggetti p:PostConFeedback pubblicati da this, ovvero tali che: (this, p):venditore.
+
+		F non deve essere vuoto.
+
+	post:
+		Sia m la media aritmetica dei valori dell'attributo 'voto' degli oggetti in F.
+		Sia Neg il sottoinsieme di F degli oggetti p con p.voto <= 2.
+		Sia z = |Neg| / |F| il rapporto tra la numerosità di Neg e quella di F.
+
+		result = m (1-z)/5.

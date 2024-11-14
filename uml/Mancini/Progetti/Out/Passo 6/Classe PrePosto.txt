@@ -1,0 +1,43 @@
+Specifica Classe PrePosto
+
+Vincoli
+
+[V.PrePosto.tipologia_tariffa_disponibile]
+	Per ogni link prep:PrePosto:		
+		sia detto tt:TipologiaTariffa tale che:
+			((prep, tt):tipo_tariffa_posto
+
+		sia detto p:Posto tale che (p,prep):posto_assegnato
+		sia detto s:Settore t.c. (p,s):pos_set
+		sia detto pren:Prenotazione t.c. (pren, prep):pren_prep
+		sia detto e:Evento t.c. (e,pren):evento_pren
+
+		deve esistere t:Tariffa tale che:
+			- (t,s):tar_settore
+			- (t,e):tar_evento
+			- (t, tt):tar_tipo_tar
+
+
+
+Operazioni
+
+prezzo():Denaro
+	pre: nessuna
+	post:
+		Sia detto po:Posto tale che (po,this):posto_assegnato
+		sia detto s:Settore t.c. (po,s):pos_set
+		sia detto pren:Prenotazione t.c. (pren, this):pren_prep
+		sia detto e:Evento t.c. (e,pren):evento_pren
+		sia tt:TipologiaTariffa t.c.  (this, tt):tipo_tariffa_posto.
+
+		Sia t:Tariffa l'oggetto (garantito esistere ed essere unico!)
+		tale che:
+			- (t,tt):tar_tipo_tar
+			- (t,e):tar_evento
+			- (t,s):tar_settore
+
+		result = t.prezzo
+
+
+
+

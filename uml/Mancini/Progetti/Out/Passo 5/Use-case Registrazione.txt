@@ -1,0 +1,11 @@
+Specifica Use-case Registrazione
+
+
+nuovo_utente(cf:CodiceFiscale, nome:Stringa, cognome:Stringa) : Utente
+	pre: non esiste u:Utente t.c. u.cf = cf
+	post:
+		Viene creato e restuito un nuovo oggetto result:Utente t.c.:
+			- result.cf = cf
+			- result.nome = nome
+			- result.cognome = cognome
+

@@ -1,0 +1,27 @@
+Specifica classe Bid
+
+
+prezzo(): Reale >= 0
+	pre: nessuna
+	post: 
+		Sia p:PostAsta l'asta associata a this, ovvero tale che (this,p):bid_asta.
+
+		Sia Bprec l'insieme dei bid per l'asta p con istante precedente a quello di this, ovvero, l'insieme di tutti i b:Bid tali che:
+			- (b,p):bid_asta
+			- b.istante < this.istante.
+
+		result = p.prezzo + p.rialzo * |Bprec|
+
+		dove con |Bprec| si denota la numerosità (o taglia o cardinalità) dell'insieme Bprec.
+
+
+
+
+Vincoli:
+
+[V.Bid.istante]
+	L'istante di ogni bid deve essere compreso tra l'istante di inizio e quello di scadenza della relativa asta. 
+	Più formalmente:
+
+	Per ogni b:Bid, sia a:PostAsta l'istanza tale che (b,a):bid_asta.
+	Deve essere che a.pubblicazione <= b.istante <= a.scadenza.

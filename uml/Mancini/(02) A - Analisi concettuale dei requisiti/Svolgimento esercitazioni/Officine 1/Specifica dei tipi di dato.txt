@@ -1,0 +1,17 @@
+Specifica dei tipi di dato
+
+
+Indirizzo: {
+	via: Stringa
+	civico: Stringa ~ [0-9]+(/[a-zA-Z]+)?
+	cap: Stringa ~ [0-9]{5}
+}
+
+Targa: Stringa ~ ([A-Z]{2}[0-9]{3}[A-Z]{2}) // Attenzione, e le targhe più vecchie? E quelle di altri paesi? E quelle delle moto? Etc.
+
+Codice: Stringa 
+
+Telefono: Stringa ~ \+?[0-9]+
+
+CodiceFiscale: Stringa ~ '[A-Za-z]{6}[0-9]{2}[A-Za-z][0-9]{2}[0-9A-Za-z]{5}'
+

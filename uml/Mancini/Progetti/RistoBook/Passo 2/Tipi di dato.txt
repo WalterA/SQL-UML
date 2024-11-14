@@ -1,0 +1,16 @@
+Specifica dei tipi di dato
+
+
+Email: Stringa ~ '...'
+
+PartitaIVA: Stringa ~ '...'
+
+Indirizzo:
+	- via:stringa
+	- civico: stringa ~ '...' [0..1]
+
+
+Cap: stringa ~ '[0-9]{5}' // Se italiano. Esercizio: generalizzare allo standard internazionale
+
+
+StatoPren: {pendente, accettata, rifiutata, annullata, non utilizzata, completata}

@@ -1,0 +1,21 @@
+Specifica Use-case GestionePrenotazioni
+
+
+accetta_prenotazione(p:Prenotazione)
+	pre:
+		p.stato = pendente
+		p.istante_app > istante corrente
+
+	post:
+		p.stato = accettata
+
+
+rifiuta_prenotazione(p:Prenotazione)
+	pre:
+		p.stato = pendente
+		p.istante_app > istante corrente
+
+	post:
+		p.stato = rifiutata
+
+

@@ -1,0 +1,32 @@
+Specifica classe PostOggettoAsta
+
+
+is_scaduta(): Booleano
+	pre: nessuna
+	post: 
+		- Modifiche ai dati: nessuna
+		- result = (this.scadenza < adesso)
+
+		
+prezzo_finale() : Reale >= 0
+	pre: 
+		this.is_scaduta() = True
+
+		Sia B l'insieme di tutti i bid dell'asta this, 
+				ovvero di tutti gli oggetti b:Bid tali che (b, this):bid_asta.
+
+		Deve essere B != {}
+
+	post:
+		- Modifiche ai dati: nessuna
+
+		- Calcolo del risultato:
+			Sia u:B tale che ha il valore massimo per l'attributo 'istante', 
+				ovvero tale che non esiste b:B per cui
+					u.istante < b.istante.
+
+			result = u.offerta()
+
+
+
+

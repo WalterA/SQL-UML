@@ -1,0 +1,66 @@
+<diagram program="umletino" version="15.1"><zoom_level>9</zoom_level><element><id>UMLNote</id><coordinates><x>0</x><y>9</y><w>180</w><h>270</h></coordinates><panel_attributes>RAFFINAMENTO DEI REQUISITI:
+1.0 IMPIEGATI
+	1.1 NOME
+	1.2 COGNOME
+	1.3 DATA
+	1.4STIPENDIO
+	1.5 DIPARTIMENTO(2.0 )1..1)
+	1.6DIRETTORE(3.0)	
+	1.7 PROGETTO 0..*
+2.0 DIPARTIMENTI
+	2.1 NOME
+	2.2 NUMERO DI TELEFONO
+	2.3 DATA DI AFFERENZA
+	2.4 DIRETTORE(3.0)
+3.0 DIRETTORI
+	IMPIEGATI(1.0)
+4.0 PROGETTO
+	4.1 NOME
+	4.2BUDGET
+
+bg=BLUE</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLNote</id><coordinates><x>0</x><y>297</y><w>351</w><h>216</h></coordinates><panel_attributes> TRACCIA
+I dati di interesse per il sistema sono impiegati, dipartimenti,
+ direttori dei dipartimenti e progetti aziendali.
+ Di ogni impiegato interessa conoscere il nome, il cognome, la
+ data di nascita e lo stipendio attuale, il dipartimento
+ (esattamente uno) al quale afferisce.
+ Di ogni dipartimento interessa conoscere il nome, il numero di
+ telefono del centralino, e la data di afferenza di ognuno degli
+ impiegati che vi lavorano.
+ Di ogni dipartimento interessa conoscere inoltre il direttore, che
+ è uno degli impiegati dell'azienda.
+ Il sistema deve permettere di rappresentare i progetti aziendali
+ nei quali sono coinvolti i diversi impiegati. Di ogni progetto
+ interessa il nome ed il budget. Ogni impiegato può partecipare
+ ad un numero qualsiasi di progetti
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>378</x><y>72</y><w>189</w><h>81</h></coordinates><panel_attributes>Impiegato
+--
+-nome :stringa
+-cognome:stringa
+-data: Data
+-stipendio : reale &gt;= 0
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>756</x><y>81</y><w>225</w><h>72</h></coordinates><panel_attributes>Dipartimento
+--
+- nome:stringa
+- numero di telefono:intero [1..9]
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>378</x><y>252</y><w>216</w><h>72</h></coordinates><panel_attributes>Progetto
+--
+-nome:stringa
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>558</x><y>72</y><w>216</w><h>45</h></coordinates><panel_attributes>lt=-
+m1=1..*
+m2=1..1
+</panel_attributes><additional_attributes>10;20;220;20</additional_attributes></element><element><id>Relation</id><coordinates><x>558</x><y>117</y><w>216</w><h>45</h></coordinates><panel_attributes>lt=-
+m1=1..1
+m2=1..1
+direttore</panel_attributes><additional_attributes>10;20;220;20</additional_attributes></element><element><id>Relation</id><coordinates><x>423</x><y>144</y><w>72</w><h>126</h></coordinates><panel_attributes>lt=-
+m1=0..*
+m2=0..*
+partecipa</panel_attributes><additional_attributes>10;10;10;120</additional_attributes></element><element><id>Relation</id><coordinates><x>657</x><y>36</y><w>27</w><h>72</h></coordinates><panel_attributes>lt=&lt;..</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>567</x><y>0</y><w>189</w><h>45</h></coordinates><panel_attributes>afferenza
+--
+-data: Data
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>720</x><y>234</y><w>108</w><h>36</h></coordinates><panel_attributes>Persona</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>720</x><y>324</y><w>108</w><h>36</h></coordinates><panel_attributes>impiegato
+bg=blue</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>720</x><y>423</y><w>108</w><h>36</h></coordinates><panel_attributes>lt=.
+direttore
+fg=red
+bg=yellow</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>765</x><y>351</y><w>27</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;80</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>882</x><y>369</y><w>108</w><h>36</h></coordinates><panel_attributes>dipartimento</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>810</x><y>387</y><w>99</w><h>72</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>90;10;10;60</additional_attributes></element><element><id>Relation</id><coordinates><x>810</x><y>333</y><w>99</w><h>63</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>90;50;10;10</additional_attributes></element><element><id>UMLUseCase</id><coordinates><x>882</x><y>270</y><w>108</w><h>36</h></coordinates><panel_attributes>progetto</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>765</x><y>261</y><w>27</w><h>81</h></coordinates><panel_attributes>lt=&lt;&lt;.</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>801</x><y>288</y><w>108</w><h>63</h></coordinates><panel_attributes>lt=&lt;.
+</panel_attributes><additional_attributes>100;10;10;50</additional_attributes></element></diagram>

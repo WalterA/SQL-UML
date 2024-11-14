@@ -1,0 +1,17 @@
+Specifica classe Prenotazione
+
+Vincoli
+
+[V.Prenotazione.no-overbooking]
+Non esistono due prenotazioni distinte pren1 e pren2 per lo stesso evento che sono associate allo stesso posto.
+
+
+Operazioni
+
+prezzo(): Denaro
+	pre: nessuna
+	post: 
+		Sia P l'insieme degli oggetti prep:PrePosto t.c. 
+			(this, prep):pren_prep
+
+		result è la somma dei valori restituiti da prep.prezzo() per ogni prep:P

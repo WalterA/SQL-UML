@@ -1,0 +1,22 @@
+docker exec -it postgres_container bash
+psql -U postgres
+tutti i comandi \?
+create database claccademia;
+\connect claccademia
+\dD DOMINI
+\dT type
+pg_dump -U postgres claccademia > claccademia.sql
+docker cp postgres_container:/data/claccademia.sql .
+psql -U postgres claccademia.sql per rimetterlo
+
+docker build -t myserve .
+docker run -p 8085:8085 -t myserve
+
+
+
+
+
+
+
+docker compose down
+docker compose up -d

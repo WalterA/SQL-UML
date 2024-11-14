@@ -1,0 +1,21 @@
+Specifica classe Categoria
+
+
+radice() : Categoria
+	L'operazione restituisce la categoria *radice* della cat. this
+
+	pre: nessuna
+
+	post:
+		Se non esiste m:Categoria tale che (this:figlia, m:madre):gerarchia
+			result = this
+
+		Altrimenti, m:Categoria tale che (this:figlia, m:madre):gerarchia
+			result = m.radice().
+
+
+
+Vincoli esterni
+
+[V.Categoria.no_cicli]
+	I link dell'associazione gerarchia non formano cicli.

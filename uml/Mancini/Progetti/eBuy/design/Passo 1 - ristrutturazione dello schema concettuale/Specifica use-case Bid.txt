@@ -1,0 +1,22 @@
+Specifica use-case Bid
+
+
+nuovo_bid(p:PostAsta) : Bid
+	pre:
+		L'asta di p è aperta, ovvero, detto p':Post t.c. (p,p'):postasta_isa_p:
+			p'.pubblicazione <= adesso <= p.scadenza.
+		
+		Non deve esistere un bid per p contemporaneo a quello che si sta creando, ovvero:
+			non deve esistere b:Bid tale che:
+				- b.istante = adesso
+				- (b,p):bid_asta
+
+	post:
+		Sia u:Privato l'oggetto associato all'attore che ha invocato l'operazione.		
+
+		Viene creato e resituito result:Bid tale che:
+			- (result,p):bid_asta
+			- result.istante = adesso
+			- (u, result):priv_bid
+
+			

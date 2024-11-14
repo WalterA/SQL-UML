@@ -1,0 +1,18 @@
+99.4. Gli utenti registrati devono poter ricevere dal sistema suggerimenti di
+ nuovi spettacoli da vedere. In particolare, si richiede che il sistema segnali 
+ ad un utente l’insieme degli spettacoli programmati nei successivi 7 giorni,
+ che sono dello stesso genere (anche se di tipologia diversa) 
+ dell’ultimo spettacolo da egli prenotato.
+
+
+suggerimenti (
+    S:Spettacolo,
+    Ur:Utente_registrato
+) : Evento
+
+    pre:
+        Ur deve aver almeno una Prenotazione effettuata
+    post:
+        per ogni (E:evento,S):r prenotati da Ur esistente si cerca:
+        S in E con E.data da now >=7
+        result = Evento

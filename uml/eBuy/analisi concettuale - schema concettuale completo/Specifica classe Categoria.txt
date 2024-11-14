@@ -1,0 +1,14 @@
+Specifica classe Categoria
+
+
+Vincoli:
+
+[V.Categoria.foresta]
+	L'insieme dei link di associazione super_sotto_categoria non forma cicli.
+
+	Formalmente: non esistono c[1]:Categoria, ..., c[n]:Categoria (per un qualche n > 0) tali che:
+		- super_sotto_categoria(super:c[1], sotto:c[2])
+		- super_sotto_categoria(super:c[2], sotto:c[3])
+		- ...
+		- super_sotto_categoria(super:c[n-1], sotto:c[n])
+		- super_sotto_categoria(super:c[n], sotto:c[1])

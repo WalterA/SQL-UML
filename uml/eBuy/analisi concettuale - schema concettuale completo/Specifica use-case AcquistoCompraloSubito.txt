@@ -1,0 +1,13 @@
+Specifica use-case AcquistoCompraloSubito
+
+
+acquista_compralo_subito(p:PostCompraloSubito)
+	pre:
+		p non è stato già acquistato, ovvero:
+			non esiste u:Privato tale che (u,p):acquirente
+
+
+	post:
+		Sia u:Privato l'oggetto associato all'attore che ha invocato l'operazione.
+
+		Viene creato il link (u,p):acquirente.

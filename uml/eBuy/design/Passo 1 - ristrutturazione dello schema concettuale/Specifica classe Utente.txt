@@ -1,0 +1,22 @@
+Specifica classe Utente
+
+Vincoli
+
+[V.Utente.disj_e_complete]
+	Per ogni u:Utente, esattamente una delle seguenti condizioni è vera:
+		- esiste p:Privato tale che (p,u):priv_isa_u
+		- oppure esiste v:VendProf tale che (p,v):vendprof_isa_u
+
+
+affidabilita(): Real01
+	pre: 
+		Sia F l'insieme degli oggetti p:Post pubblicati da this, ovvero tali che: (this, p):venditore e tali che p.ha_feedback = true.
+
+		F non deve essere vuoto.
+
+	post:
+		Sia m la media aritmetica dei valori dell'attributo 'voto' degli oggetti in F.
+		Sia Neg il sottoinsieme di F degli oggetti p con p.voto <= 2.
+		Sia z = |Neg| / |F| il rapporto tra la numerosità di Neg e quella di F.
+
+		result = m (1-z)/5.

@@ -1,0 +1,10 @@
+Specifica dei tipi di dato
+
+
+URL: Stringa che rispetta la seguente espressione regolare: ...
+	(si lascia per esercizio la definizione dell'espressione regolare) 
+
+
+CondUsato = {ottimo, buono, discreto, da sistemare}
+
+Popolarita = {bassa, media, alta}

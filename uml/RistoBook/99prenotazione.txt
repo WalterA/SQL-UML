@@ -1,0 +1,28 @@
+99. Requisiti sulle funzionalità
+ 
+   99.1. I clienti devono poter
+         99.1.1. effettuare prenotazioni presso un ristorante, indicando i dati di cui al req. 4
+ 
+         99.1.2. cancellare una prenotazione (se in anticipo e non rifiutata)
+
+Specifica Use-case PrenotazioneUtente
+
+prenotazione(
+	c:Cliente
+	d:dataora
+	nc:Numero_di_coperti
+	r:Ristorante):Prenotazione
+	pre:
+		-puo' esiste una Prenotazione solo se: d >= istante corrente 
+			and 
+				nc > 0
+		- puo' cancellare una prenotazione solo se: d>=istante corrente
+			and
+				Penotazione:stato != rifiutata
+	post:
+		-Crea e restituisci result:Prenotazione con :
+			-result.n_coperti=nc
+			-result.istante_app=d
+			crea (c,result):cliente_pren
+			
+		

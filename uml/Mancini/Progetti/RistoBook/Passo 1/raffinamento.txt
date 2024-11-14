@@ -1,0 +1,68 @@
+1. Requisiti sui clienti. Dei clienti interessa:
+	1.1. nome
+	1.2. cognome
+	1.3. indirizzo email
+
+
+2. Requisiti sui ristoranti. Dei ristoranti interessa:
+	2.1. nome
+	2.2. partita IVA (stringa numerica)
+	2.3. indirizzo
+	2.4. città
+	2.5. insieme di tipologie di cucina offerte
+	2.6. insieme di periodi nei quali le prenotazioni non sono accettate
+
+
+3. Requisiti sulle tipologie di cucina:
+	3.1. nome (univoco)
+
+
+4. Requisiti sulle prenotazioni:
+	4.1. cliente (v. req. 1)
+	4.2. data e ora
+	4.3. numero di coperti
+	4.4. lo stato: pendente, accettata, rifiutata, annullata, non utilizzata, completata
+	4.5. eventuale promozione scelta (v. req. 5)
+
+
+5. Requisiti sulle promozioni:
+	5.1. ristorante (v. req. 2)
+	5.2. nome (univoco per il ristorante)
+	5.3. percentuale di sconto
+	5.4. numero massimo di coperti/giorno che possono goderne
+	5.5. periodi di validità (ognuno come periodo temporale convesso)
+
+	5.6. deve essere sempre vero (vincolo): in ogni giorno, una promozione non può essere associata a prenotazioni per un numero complessivo di coperti > al valore di cui al req. 5.4
+
+
+
+
+
+99. Requisiti sulle funzionalità
+	
+	99.1. I clienti devono poter
+		99.1.1. effettuare prenotazioni presso un ristorante, indicando i dati di cui al req. 4
+
+		99.1.2. cancellare una prenotazione (se in anticipo e non rifiutata)
+
+	99.2. I ristoratori devono poter
+		99.2.1. iscriversi per registrare i propri ristoranti 
+		99.2.2. gestire una prenotazione:
+			99.2.2.1. accettarla (se pendente)
+			99.2.2.2. rifiutarla (se pendente)
+			99.2.2.3. contrassegnarla come consumata (se accettata e se è nel passato)
+			99.2.2.3. contrassegnarla come non utilizzata (se accettata e è nel passato)
+
+		99.2.3. creare una promozione fornendo i dati di cui al req. 5.
+		99.2.4. aggiungere un periodo di validità ad una promozione
+		99.2.3. aggiungere ed eliminare un periodo di indisponibilità (v. req. 2.6)
+
+	99.3. Lo staff di RistoBook deve poter:
+		99.3.1 aggiungere una tipologia di cucina.
+
+
+
+
+
+
+

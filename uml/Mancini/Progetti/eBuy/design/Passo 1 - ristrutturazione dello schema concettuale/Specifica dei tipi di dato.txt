@@ -1,0 +1,30 @@
+Specifica dei tipi di dato
+
+
+CREATE DOMAIN Reale_01 AS real
+	check (value >= 0 and value <= 1);
+
+CREATE DOMAIN Voto AS integr
+	check (value >= 0 and value <= 5);
+
+
+CREATE DOMAIN URL AS varchar
+	check (value ~ '...');
+	(si lascia per esercizio la definizione dell'espressione regolare) 
+
+CREATE TYPE Popolarita AS ENUM 
+	('bassa', 'media', 'alta');
+
+CREATE DOMAIN IntegerGEZ as INTEGER
+	CHECK (value >= 0);
+
+CREATE DOMAIN RealGEZ as real
+	CHECK (value >= 0);
+
+CREATE DOMAIN RealGZ as real
+	CHECK (value > 0);
+
+
+CREATE TYPE CondUsato AS ENUM
+	('ottimo', 'buono', 'discreto', 'da sistemare'); 
+

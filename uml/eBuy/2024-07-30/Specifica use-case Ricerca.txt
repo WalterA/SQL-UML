@@ -1,0 +1,34 @@
+Specifica use-case Ricerca
+
+// 3) Il numero di oggetti messi in vendita (pubblicati) da un dato utente che hanno una data categoria.
+
+oggetti_categoria(u: Utente, c: Categoria): Intero >= 0
+	pre: 
+		nessuna
+
+	post:
+		- Sia Q l'insieme degli oggetti p:PostOggetto 
+		tali che (u,p):pubblica
+		- result è il numero di oggetti p:Q tali che (c,p):cat_post
+
+
+
+radici(): Categoria [0..*]
+	L'operazione restituisce l'insieme delle categorie "radice", che cioè non hanno una sopra-categoria.
+	
+	pre:
+		nessuna
+	post:
+		result è l'insieme delle istanze c:Categoria tali che			
+			non esiste m:Categoria tale che (c:figlia, m:madre):gerarchia.
+
+
+
+utenti_senza_bid(inizio: DataOra, fine: DataOra): Privato [0..*]
+	pre: 
+		inzio <= fine
+	post: 
+		result è l'insieme di tutti gli oggetti u:Privato tali che non esiste alcun b:Bid per cui:
+				- b.istante >= inizio
+				- b.istante <= fine
+				- (u,b):bidder

@@ -1,0 +1,37 @@
+Specifica classe Post
+
+
+Vincoli:
+
+[V.Post.feedback]
+	Per ogni istanza p:Post:
+		- p.ha_feedback = True se e solo se p.voto è valorizzato
+		- se p.commento è valorizzato allora p.ha_feedback = True
+
+
+[V.Post.nuovo]
+	Per ogni istanza p:Post:
+		- p.nuovo = False se e solo p.condizioni è valorizzato
+		- se p.nuovo = True allora p.anniGaranzia >= 2
+
+[V.Post.asta_cs]
+	Per ogni istanza p:Post, esattamente una delle seguenti condizioni è vera:
+		- esiste a:PostAsta tale che (a,p):postasta_isa_p
+		- oppure esiste cs:CompraloSUbito tale che (cs,p):postcs_isa_p
+
+
+[V.Post.feedback_legale]
+	Ogni istanza p:Post tale che p.ha_feedbagk = true deve essere relativa:
+		- o ad un PostAsta la cui asta è scaduta ed ha almeno un bid
+		- oppure ad un PostCompraloSubito con un acquirente.
+
+	Più formalmente:
+
+	Per ogni pf:Post tale che pf.ha_feedback = true:
+		Se pf:PostAsta, allora, deve essere:
+			- adesso > pf.scadenza
+			- esiste b:Bid tale che (b,pf):bid_asta
+
+		Altrimenti (pf:PostCompraloSubito):
+			- esiste u:Privato tale che (u, pf):acquirente.
+

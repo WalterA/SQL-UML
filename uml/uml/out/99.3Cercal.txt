@@ -1,0 +1,16 @@
+Definire lo schema concettuale del progetto Out per modellare anche i requisiti seguenti:
+
+99.3. Gli utenti web devono poter consultare la lista degli eventi di spettacoli di una certa tipologia e genere previsti in un certo giorno.
+
+ricerca( 
+	T:TipoSpettacolo
+	G:Genere
+	D:Data
+): Evento
+
+	pre : 
+	
+	post:
+		-cerca per ogni (S:Spettacolo,T):tipo_spet e (S:Spettacolo,G):gen_spet 
+			il T e G richiesto dall'utente
+		- result = ogni Evento con D in (Evento,S:Spettacolo):rappresenta

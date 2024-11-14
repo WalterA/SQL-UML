@@ -1,0 +1,7 @@
+Specifica associazione acquirente
+
+Vincoli:
+
+[V.acquirente.istante]
+	Ogni link (u:Privato, p:PostCompraloSubito) deve avere un valore per l'attributo 'istante' maggiore dell'istante di pubblicazione di p, ovvero:
+		(u,p).istante > p.pubblicazione.

@@ -1,0 +1,54 @@
+Progetto RistoBook - Raffinamento dei requisiti
+
+1. Clienti
+	1.1 nome str
+	1.2 e-mail str
+
+2. Ristorante
+	2.1 nome str
+	2.2 PV str num
+	2.3 indirizzo record
+	2.4 città str
+	2.5 tipologia cuc enupla
+	2.6 lunghezza del preavviso minimo per cancellare una prenotazione
+	2.7 inseme di periodi 
+3. requisiti sulle tipologie di cucina
+	3.1 nome (univoco)
+
+4. Prenotazione
+	3.1 giorno date
+	3.2 ora date
+	3.3 numero int
+	3.4 cliente (v. re.q1)
+	3.5 lo stato :pendente , accettata, rifiutata,  annullata
+	4.5 eventuale promozione scelta req5
+
+5. Promozioni
+	5.1 sristorante req2
+	5.2 nome (univoco per il ristorante)
+	5.3 percentuale di sconto
+	5.4 numero massimo di coperti/giorno che possono godere
+	5.5 periodo di validità(ognuno come periodo temporale convesso)
+	5.6 dee essere sempre vero vincolo: in ogni giorno , una promozione non puo' 
+		essere associata a prenotazioni per un numero di complessivo di coperti > al valore di cui al req 5.4 
+		
+
+99. requisti sulle funzionalità
+	99.1 i clienti devono poter :
+	99.1.1 effettuare Prenotazione presso i ristoranti presso i ristoranti iscritti,
+	usufruendo, eventualmente , di Promozioni indicando i dati di cui al req.4:
+	99.1.2 cancella una pronotazione (se in anticipo di almeno il valore req2,6)
+		
+
+	99.2 i ristoratori devono poter
+		992.1 iscriversi per registrare i proprui ristoranti
+		992.2  gestire una prenotazione 
+			992.2.1 accetare 
+			992.2.2 rifiutare 
+			992.2.3 contrassegnarla come cosumarla 
+			992.2.3 contrassergrarla come non utilizzare
+		99.
+		992.3 creare una promozioni vedi req 5
+		992.4 aggiungere un periodo di validità della promozioni
+
+	

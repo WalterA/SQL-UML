@@ -1,0 +1,26 @@
+Specifica classe Bid
+
+offerta() : Reale >= 0
+
+	// L'operazione deve restituire il valore del bid su cui è invocata (this).
+
+	pre: nessuna
+
+	post:
+		- L'operazione non modifica i dati
+
+		- result è calcolato come segue:
+
+			Sia a:PostOggettoAsta tale che (garantito esistere ed unico):
+				(this, a): bid_asta
+			
+			Sia n il numero di oggetti b:Bid tali che: 
+				- (b,a):bid_asta
+				- b.istante < this.istante
+				
+			result = a.prezzo + a.rialzo * n
+
+
+
+		
+

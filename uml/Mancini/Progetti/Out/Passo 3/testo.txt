@@ -1,0 +1,12 @@
+6. Requisiti sugli utenti:
+     6.1. nome
+     6.2. cognome
+     6.3. codice fiscale
+
+
+7. Requisiti sulle prenotazioni
+     6.1. Evento scelto
+     6.2. Settore scelto
+     6.3. Posti scelti (v. req 4), per ognuno
+          6.3.1. Tariffa scelta (v. req. 3.5)
+

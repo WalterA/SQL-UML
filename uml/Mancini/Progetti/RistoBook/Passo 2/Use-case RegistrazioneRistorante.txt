@@ -1,0 +1,25 @@
+Specifica Use-case RegistrazioneRistorante
+
+nuovo_ristorante(
+	nome:Stringa, 
+	piva:PartitaIVA, 
+	indirizzo:Indirizzo,
+	tipi_cucine: Stringa [1..*],
+	cap: CAP,
+	citta: Citta
+
+) : Ristorante
+
+	pre:
+		(cap, citta):cap_citta
+
+
+	post: viene creato e restituito un oggetto result:Ristorante con:
+		- result.nome = nome
+		- result.partitaIVA = piva
+		- result.indirizzo = indirizzo
+		- result.cucine = tipi_cucine
+
+		Viene creato il link (result, cap): rist_cap
+
+		Viene creato il link (result, citta):rist_citta

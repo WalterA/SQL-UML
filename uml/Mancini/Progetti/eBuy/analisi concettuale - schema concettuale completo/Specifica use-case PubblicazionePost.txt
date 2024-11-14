@@ -1,0 +1,48 @@
+Specifica use-case PubblicazionePost
+
+
+nuovo_post(
+	descr:stringa,
+	cat:Categoria,
+	anni_garanzia: Intero >= 0,
+	nuovo: Booleano,
+	cond_usato: CondUsato [0..1],
+	prezzo: Reale >= 0,
+	valuta: Valuta,
+	metodo_pagam: MetodoPagamento [1..*],
+	asta: Booleano,
+	rialzo: Reale >= 0 [0..1],
+	scadenza: DataOra [0..1]
+)
+
+	pre:
+		- se nuovo = true, allora deve essere anni_garanzia >= 2
+		- nuovo = false se e solo se cond_usato è valorizzato
+		- asta = true se e solo se rialzo è valorizzato
+		- asta = true se e solo se scadenza è valorizzato
+		- scadenza (se valorizzato) deve essere > adesso
+
+
+	post:
+		Sia u:Utente l'oggetto associato all'attore che ha invocato l'operazione.
+
+		Viene creato e restituito result:Post tale che:
+			- (result, u): venditore
+			- result.descrizione = descr
+			- (cat, result):cat_post
+			- result.anni_garanzia = anni_garanzia
+			- se nuovo = true, allora:
+				- result:PostNuovo
+			  altrimenti (nuovo = false):
+			  	- result.condizioni = cond_usato (certamente valorizzato)
+			- result.prezzo = prezzo
+			- (result, valuta):post_valuta
+
+			- per ogni mp:metodo_pagam si ha: 
+				- (mp, result):metodopagam_post
+
+			- se asta = true, allora:
+				- result:PostAsta
+					- result.rialzo = rialzo (certamente valorizzato)
+					- result.scadenza = scadenza (certamente valorizzato)
+

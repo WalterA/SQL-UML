@@ -1,0 +1,9 @@
+99. Requisiti sulle funzionalità
+     99.1. Gli utenti devono poter:
+          99.1.1 iscriversi, fornendo i dati di cui al req. 6
+
+
+6. Requisiti sugli utenti:
+     6.1. nome
+     6.2. cognome
+     6.3. codice fiscale

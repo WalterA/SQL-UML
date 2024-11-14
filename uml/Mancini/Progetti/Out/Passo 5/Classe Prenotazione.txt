@@ -1,0 +1,11 @@
+Specifica classe Prenotazione
+
+Operazione
+
+prezzo(): Denaro
+	pre: nessuna
+	post: 
+		Sia P l'insieme degli oggetti prep:PrePosto t.c. 
+			(this, prep):pren_prep
+
+		result è la somma dei valori restituiti da prep.prezzo() per ogni prep:P

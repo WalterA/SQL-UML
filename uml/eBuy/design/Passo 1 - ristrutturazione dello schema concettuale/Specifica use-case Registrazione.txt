@@ -1,0 +1,22 @@
+Specifica use-case Registrazione
+
+
+nuovo_privato(nome:Stringa) : Privato
+	pre: non esiste u:Utente tale che u.nome = nome
+
+	post: vengono creati e restituiti result:Privato e u:Utente tali che:
+		u.nome = nome
+		u.registrazione = adesso
+		viene creato il link (result, u):priv_isa_u
+
+
+
+nuovo_professionale(nome:Stringa, vetrina:URL) : VendProf
+	pre: non esiste u:Utente tale che u.nome = nome
+
+	post: vengono creati e restituiti result:VendProf e u:Utente tali che:
+		u.nome = nome
+		u.registrazione = adesso
+		result.vetrina = vetrina
+		Viene creato il link (result, u):vendprof_isa_u
+

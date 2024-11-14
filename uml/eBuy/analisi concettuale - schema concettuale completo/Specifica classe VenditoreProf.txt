@@ -1,0 +1,17 @@
+Specifica classe VenditoreProf
+
+
+popolarita(): Popolarita
+	pre: nessuna
+	post:
+		Sia U l'insieme degli oggetti u:Privato tali che:
+			- esiste un bid effettuato da u, con istante >= "adesso - 12 mesi" per un post pubblicato da this
+			- oppure esiste un link di associazione acquirente tra u ed un post pubblicato da this, con valore per l'attributo istante >= "adesso - 12 mesi".
+
+		Sia n = |U|, ovvero la numerosità (o taglia, o cardinalità) di U.
+
+		Se n < 50, allora result = bassa
+		Se 50 < n <= 300, allora result = media
+		Se n > 300, allora result = alta.
+
+		

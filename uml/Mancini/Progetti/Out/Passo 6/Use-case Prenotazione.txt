@@ -1,0 +1,38 @@
+Specifica Use-case Prenotazione
+
+
+99.2. Gli utenti registrati devono poter prenotare un dato numero posti alla tipologia di tariffa scelta di un dato settore per un evento. 
+
+
+nuova_prenotazione(
+	u:Utente, 
+	e:Evento, 
+	P:(p:Posto, tt:TipologiaTariffa) [1..*]
+) : Prenotazione
+
+	pre: 
+		- Non esistono due elementi di P relativi allo stesso posto
+		
+		- Le tariffe richieste sono disponibili, ovvero:
+		 Per ogni (p,tt):P, deve esistere t:Tariffa tale che:
+			- (t,tt):tar_tipo_tar
+			- esiste s:Settore, t.c.  (t,s):tar_settore e (p,s):pos_set
+		
+		- Non esiste un'altra prenotazione che ha già prenotato uno dei posti richiesti per l'evento 'e', ovvero:
+		Per ogni (p,tt):P, non deve esistere pren:Prenotazione tale che:
+			- (e,pren):evento_pren
+			- esiste pp:PrePosto t.c. (pren,pp):pren_prep e (pp,p):posto_assegnato
+
+	post: 
+		Viene creato pren:Prenotazione con:
+			- pren.instante = istante corrente
+		Viene creato il link: (e,pren):evento_pren
+		Viene creato il link: (u,pren):utente_pren
+
+		Per ogni (p,tt) in P:
+			Viene creato un oggetto pp:Preposto
+			Viene creato (pp,p):posto_assegnato
+			Viene creato (pp,tt):tipo_tariffa_posto
+			Viene creato (pren, pp):pren_prep
+
+		result = pren

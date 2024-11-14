@@ -1,0 +1,20 @@
+Specifica Classe Tariffa
+
+
+Vincoli
+
+
+[V.Tariffa.settore_evento]
+	Per ogni t:Tariffa, siano:
+		- sett:Settore tale che (t,sett):tar_settore 
+		- e:Evento tale che (t,e):tar_evento
+		- sa:Sala tale che (e,sa):ospita:
+	deve essere che (sett,sa):set_sala
+
+
+
+
+
+
+
+

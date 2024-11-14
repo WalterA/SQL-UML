@@ -1,0 +1,32 @@
+Definire lo schema concettuale che modelli i requisiti seguenti:
+
+1. Requisiti sui clienti. Dei clienti interessa:
+	1.1. nome
+	1.2. cognome
+	1.3. indirizzo email
+
+2. Requisiti sui ristoranti. Dei ristoranti interessa:
+	2.1. nome
+	2.2. partita IVA (stringa numerica)
+	2.3. indirizzo
+	2.4. città
+	2.5. insieme di tipologie di cucina offerte
+
+4. Requisiti sulle prenotazioni:
+	4.1. cliente (v. req. 1)
+	4.2. data e ora
+	4.3. numero di coperti
+	4.4. lo stato: pendente, accettata, rifiutata, annullata, non utilizzata, completata
+
+99. Requisiti sulle funzionalità
+	99.2. I ristoratori devono poter
+		99.2.1. iscriversi per registrare i propri ristoranti 
+
+		99.2.2. gestire una prenotazione:
+			99.2.2.1. accettarla (se pendente)
+			99.2.2.2. rifiutarla (se pendente)
+
+
+
+
+

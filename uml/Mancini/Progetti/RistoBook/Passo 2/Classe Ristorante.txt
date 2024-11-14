@@ -1,0 +1,4 @@
+Specifica classe Ristorante
+
+[V.Ristorante.cap_citta]
+	Il CAP di ogni ristorante deve essere associato alla città del ristorante.

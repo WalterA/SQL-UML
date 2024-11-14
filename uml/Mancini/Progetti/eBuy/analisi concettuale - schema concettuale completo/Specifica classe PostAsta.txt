@@ -1,0 +1,21 @@
+Specifica classe PostAsta
+
+
+conclusa(): Booleano
+	pre:  this.pubblicazione < adesso
+
+	post:
+		- result è true se this.scadenza < adesso
+		- result è false altrimenti.
+
+
+bid_aggiudicatario(): Bid [0..1]
+	pre: this.conclusa() = true
+
+	post:
+		sia B l'insieme dei bid associati a this, ovvero l'insieme degli oggetti b:Bid tali che (b,this):bid_asta.
+
+		Se B è vuoto, l'operazione non restituisce nulla.
+		Altrimenti, result è l'elemento b:B che ha il valore massimo per b.istante, ovvero tale che non esiste b':B per cui b.istante < b'.istante.
+
+		

@@ -1,0 +1,19 @@
+Specifica classe PostConFeedback
+
+
+Vincoli:
+
+[V.PostConFeedback.legale]
+	Ogni istanza di PostConFeedback deve essere relativa:
+		- o ad un PostAsta la cui asta è scaduta ed ha almeno un bid
+		- oppure ad un PostCompraloSubito con un acquirente.
+
+	Più formalmente:
+
+	Per ogni pf:PostConFeedback:
+		Se pf:PostAsta, allora, deve essere:
+			- adesso > pf.scadenza
+			- esiste b:Bid tale che (b,pf):bid_asta
+
+		Altrimenti (pf:PostCompraloSubito):
+			- esiste u:Privato tale che (u, pf):acquirente.
